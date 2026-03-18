@@ -1,0 +1,9 @@
+{
+  "role": "admin",
+  "description": "Platform administrator for user account management and moderation.",
+  "responsibilities": [
+    "User account management and moderation",
+    "Content moderation",
+    "Report handling"
+  ]
+}
