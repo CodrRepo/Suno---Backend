@@ -35,10 +35,11 @@ app.use("/api/concert-requests", concertRequestRoutes);
 app.use("/api/albums", albumRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/check", (req, res)=>{
+  res.json({message: "API is working"})
+})
 
-// Global JSON error handler — catches anything that calls next(err) including
-// unhandled multer/cloudinary errors from other routes
-// eslint-disable-next-line no-unused-vars
+
 app.use((err, req, res, next) => {
   const status = err.status || err.statusCode || 500;
   const message = err.message || "Internal server error";
