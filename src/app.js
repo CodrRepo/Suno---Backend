@@ -13,7 +13,10 @@ const adminRoutes = require("./routes/admin.routes");
 const app = express();
 
 const corsOptions = {
-  origin: 'https://sunomusic.vercel.app',
+  origin: [
+    "http://localhost:5173",   // local dev
+    'https://sunomusic.vercel.app' // production
+  ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Allow cookies/headers if you use them for login
   optionsSuccessStatus: 200 
