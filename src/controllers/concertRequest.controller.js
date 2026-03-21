@@ -49,9 +49,13 @@ async function createConcertRequest(req, res) {
       return res.status(400).json({ message: "date must be a valid future date" });
     }
 
-    const artist = await User.findOne({ _id: artistId, profileType: "artist" });
+    const artist = await User.findOne({ _id: artistId});
     if (!artist) {
       return res.status(404).json({ message: "Artist not found" });
+    }
+
+    if(artist.artistName === ""){
+      return res.status(400).json({ message: "The specified user is not an artist" });
     }
 
     if (req.user._id.equals(artistId)) {
