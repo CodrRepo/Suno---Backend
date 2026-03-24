@@ -103,7 +103,7 @@ async function getFavoritesPlaylist(req, res) {
           isFavorites: true,
           userId: req.user._id,
           songs: [],
-          coverImage: "",
+          coverImage: "https://res.cloudinary.com/dj974ecp3/image/upload/v1774252570/favourite_brd4yh.webp",
         },
       },
       { upsert: true, new: true, setDefaultsOnInsert: true }

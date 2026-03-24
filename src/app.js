@@ -14,6 +14,7 @@ const app = express();
 
 const corsOptions = {
   origin: [
+    "http://192.168.1.103:5173",
     "http://localhost:5173",   // local dev
     'https://sunomusic.vercel.app' // production
   ],
